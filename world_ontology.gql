@@ -1,0 +1,72 @@
+define 
+
+  country sub entity,    
+    has countrycode,    
+    has countryname,    
+    has continent,
+    has region,
+    has surfacearea,    
+    has indepyear,    
+    has population,    
+    has lifeexpectancy,    
+    has gnp,    
+    has gnpold,    
+    has localname,    
+    has governmentform,    
+    has headofstate,
+    has capital,    
+    plays speaks-language,     
+    plays contains-city; 
+
+  city sub entity,  
+    has city-id,  
+    has population,    
+    has cityname,  
+    has countrycode,
+    has district,  
+    plays in-country; 
+
+  language sub entity,    
+    has name,    
+    plays language-spoken; 
+
+  speaks sub relation,    
+    relates speaks-language,    
+    relates language-spoken,    
+    has percentage,    
+    has isofficial; 
+   
+  has-city sub relation,    
+    relates contains-city,    
+    relates in-country,    
+    has iscapital;
+    
+  countrycode sub attribute, value string;
+  countryname sub attribute, value string;
+  continent sub attribute, value string;
+  region sub attribute, value string;
+  capital sub attribute, value long;
+  surfacearea sub attribute, value double; 
+  indepyear sub attribute, value long; 
+  lifeexpectancy sub attribute, value double;
+  gnp sub attribute, value double;
+  gnpold sub attribute, value double;
+  localname sub attribute, value string;
+  governmentform sub attribute, value string;
+  headofstate sub attribute, value string;
+  iscapital sub attribute, value boolean;
+  isofficial sub attribute, value boolean;
+  percentage sub attribute, value double; 
+
+
+  cityname sub attribute, value string;
+  district sub attribute, value string;
+  city-id sub attribute, value long; 
+  population sub attribute, value long;
+
+  name sub attribute, value string;
+
+  speaks-language sub role;
+  language-spoken sub role;
+  contains-city sub role;
+  in-country sub role;
